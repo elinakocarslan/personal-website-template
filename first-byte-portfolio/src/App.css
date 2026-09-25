@@ -1,15 +1,18 @@
 :root {
+  /* Change these colors to personalize the website's palette. */
   --ink: #193c3c;
   --muted: #5d7470;
   --paper: #f4f0e8;
   --line: #cbd5cb;
-  --accent: #e87952;
+  --accent: #b159d4;
   --cream: #e7efe5;
   --serif: Georgia, 'Times New Roman', serif;
   --sans: 'Trebuchet MS', Arial, sans-serif;
 }
 
+/* Change the fonts or base text size here if you want a different feel. */
 body {
+  /* Removes the browser's default space around the page. */
   margin: 0;
   background: var(--paper);
   color: var(--ink);
@@ -23,55 +26,25 @@ a {
 }
 
 .site-shell {
+  /* Keeps the content from becoming too wide on large screens. */
   max-width: 1180px;
   margin: 0 auto;
+  /* Change this padding to move content farther from the screen edges. */
   padding: 0 52px;
 }
 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.wordmark {
-  font-family: var(--serif);
-  font-size: 24px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.wordmark span {
-  color: var(--accent);
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  font-size: 14px;
-}
-
-.nav a,
-.text-link,
 .footer-links a {
+  /* Removes the usual underline from the footer links (links at the very bottom of the screen). */
   text-decoration: none;
 }
 
-.nav a:hover,
-.text-link:hover,
 .footer-links a:hover {
+  /* This color appears when the mouse is over a footer link. */
   color: var(--accent);
-}
-
-.nav-contact {
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 3px;
 }
 
 .hero {
+  /* The hero has text on the left and the profile picture on the right. */
   min-height: 590px;
   display: grid;
   grid-template-columns: 1fr 330px;
@@ -80,6 +53,7 @@ a {
 }
 
 .hero-copy {
+  /* Prevents the introduction text from becoming too wide to read. */
   max-width: 650px;
 }
 
@@ -114,81 +88,37 @@ h2 {
 }
 
 .intro {
+  /* Change this size if you want the introduction to stand out more or less. */
   max-width: 480px;
   color: var(--muted);
   font-size: 21px;
 }
 
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  margin-top: 34px;
-}
-
-.button {
-  display: inline-flex;
-  gap: 12px;
-  padding: 12px 18px;
-  text-decoration: none;
-}
-
-.button-primary {
-  color: var(--paper);
-  background: var(--ink);
-}
-
-.button-primary:hover {
-  background: var(--accent);
-}
-
-.text-link {
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 2px;
-}
-
-.portrait {
-  position: relative;
+.profile {
+  /* Places the image and location underneath one another. */
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  overflow: hidden;
-  width: 100%;
-  aspect-ratio: 1 / 1.12;
-  padding: 24px;
-  background: var(--cream);
-  border-radius: 48% 48% 4px 4px;
+  align-items: center;
   text-align: right;
 }
 
-.portrait-sun {
-  position: absolute;
-  top: 13%;
-  left: 14%;
-  width: 72%;
-  height: 65%;
+.profile-picture {
+  /* Change width and height together to resize the profile picture. */
+  width: 330px;
+  height: 330px;
+  /* cover fills the circle without stretching the image. */
+  object-fit: cover;
+  /* 50% makes the square image into a circle. */
   border-radius: 50%;
-  background: var(--accent);
-  opacity: 0.85;
 }
 
-.portrait-initials {
-  position: relative;
-  z-index: 1;
-  font-family: var(--serif);
-  font-size: 100px;
-  letter-spacing: -8px;
-  text-align: center;
-  color: var(--ink);
-}
-
-.portrait p {
-  position: relative;
+.profile p {
   color: var(--muted);
   font-size: 12px;
 }
 
 .section {
+  /* Each section has a small label on the left and content on the right. */
   display: grid;
   grid-template-columns: 190px 1fr;
   gap: 60px;
@@ -207,24 +137,28 @@ h2 {
 }
 
 .skill-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  /* This is a plain list so languages and tools stay easy to edit. */
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  padding-left: 20px;
   margin-top: 30px;
 }
 
-.skill-list span {
-  padding: 7px 12px;
-  border: 1px solid var(--line);
+.skill-list li {
+  color: inherit;
+  font-family: inherit;
 }
 
 .project-list {
+  /* Adds a line above the first project. */
   border-top: 1px solid var(--line);
 }
 
 .project {
+  /* Each project row lines up its number, tag, title, and description. */
   display: grid;
-  grid-template-columns: 45px 1fr 30px;
+  grid-template-columns: 45px 110px 1fr 1fr 30px;
   align-items: center;
   gap: 25px;
   padding: 25px 0;
@@ -232,6 +166,7 @@ h2 {
 }
 
 .project-number {
+  margin: 0;
   color: var(--accent);
   font-family: var(--serif);
   font-size: 20px;
@@ -242,7 +177,7 @@ h2 {
   font-size: 28px;
 }
 
-.project p {
+.project-description {
   margin: 0;
   color: var(--muted);
 }
@@ -256,6 +191,7 @@ h2 {
 }
 
 .footer {
+  /* The footer has contact information, social links, and a small note. */
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: end;
@@ -284,20 +220,9 @@ h2 {
 }
 
 @media (max-width: 700px) {
+  /* These rules make the page easier to read on phones. */
   .site-shell {
     padding: 0 22px;
-  }
-
-  .topbar {
-    padding: 22px 0;
-  }
-
-  .nav {
-    gap: 14px;
-  }
-
-  .nav a:not(.nav-contact) {
-    display: none;
   }
 
   .hero {
@@ -314,10 +239,14 @@ h2 {
     font-size: 64px;
   }
 
-  .portrait {
+  .profile {
     align-self: flex-end;
-    width: 70%;
-    max-width: 245px;
+  }
+
+  .profile-picture {
+    /* Use a smaller circle on small screens. */
+    width: 245px;
+    height: 245px;
   }
 
   .section {
@@ -338,5 +267,26 @@ h2 {
 
   .footer-note {
     text-align: left;
+  }
+
+  .project {
+    /* Projects use fewer columns on a narrow screen. */
+    grid-template-columns: 35px 1fr 25px;
+    gap: 12px;
+  }
+
+  .project-tag,
+  .project-description {
+    grid-column: 2;
+  }
+
+  .project h3 {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .project-arrow {
+    grid-column: 3;
+    grid-row: 1 / 4;
   }
 }
